@@ -63,11 +63,14 @@ public class SocketServer {
             try {
                 line = in.readLine();
                 System.out.println("Server received: " + line);
+                Thread.sleep(2000);
                 out.write("ok");
                 out.newLine();
                 out.flush();
             } catch (IOException i) {
                 System.err.println(i);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(SocketServer.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         closeSocket();

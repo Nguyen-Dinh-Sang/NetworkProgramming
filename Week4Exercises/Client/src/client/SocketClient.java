@@ -65,7 +65,12 @@ public class SocketClient {
             if (message.equals("Over")) {
                 closeSocket();
             }
-            result.result(in.readLine());
+            
+            String line = in.readLine();
+            if (line != null) {
+                System.err.println("!null");
+                result.result(line);
+            }
         } catch (IOException ex) {
             Logger.getLogger(SocketClient.class.getName()).log(Level.SEVERE, null, ex);
         }
