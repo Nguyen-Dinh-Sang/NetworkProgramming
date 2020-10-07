@@ -26,8 +26,8 @@ public class SocketClient {
     private Result result;
 
     public SocketClient(String address, int port, Result result) {
-        openSocket(address, port);
         this.result = result;
+        openSocket(address, port);
     }
 
     private void openSocket(String address, int port) {
